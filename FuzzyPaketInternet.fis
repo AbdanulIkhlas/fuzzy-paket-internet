@@ -1,0 +1,47 @@
+[System]
+Name='FuzzyPaketInternet'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='harga'
+Range=[0 100]
+NumMFs=3
+MF1='murah':'trapmf',[0 0 10 30]
+MF2='sedang':'trimf',[25 45 65]
+MF3='mahal':'trapmf',[60 90 100 100]
+
+[Input2]
+Name='GB'
+Range=[0 50]
+NumMFs=3
+MF1='sedikit':'trapmf',[0 0 5 10]
+MF2='sedang':'trimf',[7 20 30]
+MF3='banyak':'trapmf',[25 40 50 50]
+
+[Output1]
+Name='paketInternet'
+Range=[0 100]
+NumMFs=3
+MF1='jelek':'trimf',[0 0 20]
+MF2='lumayan':'trimf',[20 50 70]
+MF3='bagus':'trimf',[70 100 100]
+
+[Rules]
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
+2 3, 3 (1) : 1
+2 2, 2 (1) : 1
+2 1, 1 (1) : 1
+1 1, 2 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
