@@ -131,7 +131,7 @@ else
 end
  
 % menampilkan hasil
-set(handles.fieldHasil,'string',num2str(output));
+set(handles.fieldHasil,'string',round(output,1));
 set(handles.textHasil, 'string', hasil);
 
 % --- Executes during object creation, after setting all properties.
@@ -207,7 +207,7 @@ else
 end
  
 % menampilkan hasil
-set(handles.fieldHasil,'string',num2str(output));
+set(handles.fieldHasil,'string',round(output,1));
 set(handles.textHasil, 'string', hasil);
 
 
